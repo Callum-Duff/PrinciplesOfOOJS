@@ -140,3 +140,16 @@ person2.sayName();
 //The call() method
 //The call method executes the function with a specific this value and parameters
 //The first parameter to call is the value that the 'this' object should have
+function sayNameForAll(label) {
+    console.log(label + ": " + this.name);
+}
+
+person1 = {
+    name: "Nicholas"
+};
+person2 = {
+    name: "Jill"
+};
+
+sayNameForAll.call(person1, "person1"); //Calls function sayNameForAll with person1 as the this object
+sayNameForAll.call(person2, "person2"); //Calls function sayNameForAll with person2 as the this object
